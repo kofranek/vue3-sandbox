@@ -22,10 +22,13 @@
             </div>
             <hr />
             <ul class='list'>
-                <li class="list-item" v-for="(note, idx) in notes">
+                <li v-if="notes.length!==0" class="list-item" v-for="(note, idx) in notes">
                     ({{idx+1}}) {{note}}
                     <button v-on:click="removeNote(idx)" class="btn danger">Vymazat</button>
                 </li>
+                <div v-else>
+                    Není žádná poznámka, zapište první poznámku
+                </div>
             </ul>
         </div>
     </div>
