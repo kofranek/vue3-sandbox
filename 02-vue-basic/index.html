@@ -13,11 +13,14 @@
     <div class="container" id="app">
         <div class="card">
             <h1>{{title}}</h1>
-            <div class="form-control" >
-                <input type="text" v-bind:placeholder="placeholderString"/>
+            <div class="form-control">
+                <input type="text" v-bind:placeholder="placeholderString" 
+                v-on:input="inputChangeHandler" />
             </div>
+            <h2>inputValue: {{inputValue}}</h2>
             <div>
-                <button class="btn">přidat poznámku</button>
+                <button class="btn"
+                >přidat poznámku</button>
             </div>
             <hr />
         </div>
