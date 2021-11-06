@@ -14,10 +14,11 @@
         <div class="card">
             <h1>{{title}}</h1>
             <div class="form-control">
-                <input type="text" v-bind:placeholder="placeholderString" v-on:input="inputChangeHandler" />
+                <input type="text" v-bind:placeholder="placeholderString" v-on:input="inputChangeHandler"
+                    v-bind:value="inputValue" />
             </div>
             <div>
-                <button class="btn">přidat poznámku</button>
+                <button class="btn" v-on:click="addNewNote">přidat poznámku</button>
             </div>
             <hr />
             <ul class='list'>

@@ -4,7 +4,7 @@ const App = {
       placeholderString: 'napiš novou poznámku',
       title: 'Seznam poznámek',
       inputValue: '',
-      notes: ['první poznámka', 'druhá poznámka', 'třetí poznámka']
+      notes: ['první poznámka', 'druhá poznámka']
     }
   },
   methods: {
@@ -14,6 +14,13 @@ const App = {
         event.target.value
       )
       this.inputValue = event.target.value
+    },
+    addNewNote () {
+      if (this.inputValue !== '') {
+        this.notes.push(this.inputValue)
+        this.inputValue = ''
+      }
+      console.log('this.notes=', this.notes)
     }
   }
 }
