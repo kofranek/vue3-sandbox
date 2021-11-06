@@ -1,6 +1,7 @@
 const App = {
   data () {
     return {
+      title: 'čítač',
       counter: 42
     }
   }
