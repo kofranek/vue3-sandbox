@@ -21,6 +21,10 @@ const App = {
         this.inputValue = ''
       }
       console.log('this.notes=', this.notes)
+    },
+    removeNote (index) {
+      console.log('removeNote index=',index)
+      this.notes.splice(index, 1)
     }
   }
 }

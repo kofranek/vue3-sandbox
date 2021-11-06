@@ -22,8 +22,9 @@
             </div>
             <hr />
             <ul class='list'>
-                <li class="list-item" v-for="note in notes">
-                    {{note}}
+                <li class="list-item" v-for="(note, idx) in notes">
+                    ({{idx+1}}) {{note}}
+                    <button v-on:click="removeNote(idx)" class="btn danger">Vymazat</button>
                 </li>
             </ul>
         </div>
