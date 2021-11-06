@@ -15,7 +15,7 @@
             <h1>{{title}}</h1>
             <div class="form-control">
                 <input type="text" v-bind:placeholder="placeholderString" v-on:input="inputChangeHandler"
-                    v-bind:value="inputValue" />
+                    v-on:keypress.enter="addNewNote" v-bind:value="inputValue" />
             </div>
             <div>
                 <button class="btn" v-on:click="addNewNote">přidat poznámku</button>
