@@ -1,7 +1,8 @@
 const App = {
   data () {
     return {
-      title: 'seznam poznámek',
+      placeholderString: "napiš novou poznámku",
+      title: 'Seznam poznámek',
     }
   }
 }
