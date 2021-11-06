@@ -14,15 +14,17 @@
         <div class="card">
             <h1>{{title}}</h1>
             <div class="form-control">
-                <input type="text" v-bind:placeholder="placeholderString" 
-                v-on:input="inputChangeHandler" />
+                <input type="text" v-bind:placeholder="placeholderString" v-on:input="inputChangeHandler" />
             </div>
-            <h2>inputValue: {{inputValue}}</h2>
             <div>
-                <button class="btn"
-                >přidat poznámku</button>
+                <button class="btn">přidat poznámku</button>
             </div>
             <hr />
+            <ul class='list'>
+                <li class="list-item" v-for="note in notes">
+                    {{note}}
+                </li>
+            </ul>
         </div>
     </div>
     </div>

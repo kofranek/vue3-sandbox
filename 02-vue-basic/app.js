@@ -3,7 +3,8 @@ const App = {
     return {
       placeholderString: 'napiš novou poznámku',
       title: 'Seznam poznámek',
-      inputValue: ''
+      inputValue: '',
+      notes: ['první poznámka', 'druhá poznámka', 'třetí poznámka']
     }
   },
   methods: {
