@@ -28,6 +28,24 @@ const App = {
     },
     naVelkaPismena (item) {
       return item.toUpperCase()
+    },
+    numberOfChars () {
+      console.log('volá se numberChars()')
+      let nChar = 0
+      this.notes.forEach(item => {
+        nChar += item.length
+      })
+      return nChar
+    }
+  },
+  computed: {
+    numberOfCharsComputed () {
+      console.log('volá se numberCharsComputed()')
+      let nChar = 0
+      this.notes.forEach(item => {
+        nChar += item.length
+      })
+      return nChar
     }
   }
 }

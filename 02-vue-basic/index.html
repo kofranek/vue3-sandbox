@@ -21,15 +21,26 @@
                 <button class="btn" @click="addNewNote">přidat poznámku</button>
             </div>
             <hr />
-            <ul class='list'>
-                <li v-if="notes.length!==0" class="list-item" v-for="(note, idx) in notes">
+            <ul class='list' v-if="notes.length!==0">
+                <li class="list-item" v-for="(note, idx) in notes">
                     ({{idx+1}}) {{naVelkaPismena(note)}}
                     <button @click="removeNote(idx)" class="btn danger">Vymazat</button>
                 </li>
-                <div v-else>
-                    Není žádná poznámka, zapište první poznámku
-                </div>
+
+                <hr />
+                <li>
+                    <strong>
+                        počet poznámek: {{notes.length}} | celkový počet znaků: {{
+                        // numberOfChars()
+                        numberOfCharsComputed
+                        }}
+                    </strong>
+                </li>
+
             </ul>
+            <div v-else>
+                Není žádná poznámka, zapište první poznámku
+            </div>
         </div>
     </div>
     </div>
