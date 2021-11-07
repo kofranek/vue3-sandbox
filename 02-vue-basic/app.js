@@ -23,8 +23,11 @@ const App = {
       console.log('this.notes=', this.notes)
     },
     removeNote (index) {
-      console.log('removeNote index=',index)
+      console.log('removeNote index=', index)
       this.notes.splice(index, 1)
+    },
+    naVelkaPismena (item) {
+      return item.toUpperCase()
     }
   }
 }
