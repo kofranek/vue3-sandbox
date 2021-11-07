@@ -17,13 +17,35 @@
   <div class="container pt-5" id="app" v-cloak>
     <div class="card center">
       <div v-html="myHtml">{{myHtml}}</div>
-      <h2 v-text="title"> </h2>
+
+      <!-- <h2 v-text="title"> </h2>
       <h2 v-once>{{title}}</h2>
       <h2 v-pre>{{title}}</h2>
         <button class="btn" 
         @click="title='nová hlavička'"
-      >změň hlavičku</button>
+      >změň hlavičku</button> -->
+      
+      <ul class="list">
+        <!-- <li class="list-item" v-for="(item, idx) in 7">
+          <strong>{{idx}}. </strong>{{item}}
+        </li> -->
 
+        <!-- <li class="list-item" v-for="(value, key) in person">
+          <strong>{{key}}: </strong>{{value}}
+        </li> -->
+
+        <li class="lit-item" 
+        v-for="(item, idx) in items"
+        @click="items.splice(idx,1)"
+        
+        >
+          {{item}}
+        </li>
+
+
+
+
+      </ul>
     </div>
   </div>
 
