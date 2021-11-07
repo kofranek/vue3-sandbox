@@ -8,15 +8,15 @@ const App = {
     }
   },
   methods: {
-    inputChangeHandler (event) {
-      /*
-      console.log(
-        'volán: inputChangeHandler event.target.value=',
-        event.target.value
-      )
-      */
-      this.inputValue = event.target.value
-    },
+    // inputChangeHandler (event) {
+    //   /*
+    //   console.log(
+    //     'volán: inputChangeHandler event.target.value=',
+    //     event.target.value
+    //   )
+    //   */
+    //   this.inputValue = event.target.value
+    // },
     addNewNote () {
       if (this.inputValue !== '') {
         this.notes.push(this.inputValue)

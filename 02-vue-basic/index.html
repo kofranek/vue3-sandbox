@@ -14,8 +14,8 @@
         <div class="card">
             <h1>{{title}}</h1>
             <div class="form-control">
-                <input type="text" :placeholder="placeholderString" @input="inputChangeHandler"
-                    @keypress.enter="addNewNote" :value="inputValue" />
+                <!-- <input type="text" :placeholder="placeholderString" @input="inputChangeHandler" @keypress.enter="addNewNote" :value="inputValue" /> -->
+                <input type="text" :placeholder="placeholderString" @keypress.enter="addNewNote" v-model="inputValue" />
             </div>
             <div>
                 <button class="btn" @click="addNewNote">přidat poznámku</button>
