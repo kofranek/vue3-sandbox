@@ -14,17 +14,17 @@
         <div class="card">
             <h1>{{title}}</h1>
             <div class="form-control">
-                <input type="text" v-bind:placeholder="placeholderString" v-on:input="inputChangeHandler"
-                    v-on:keypress.enter="addNewNote" v-bind:value="inputValue" />
+                <input type="text" :placeholder="placeholderString" @input="inputChangeHandler"
+                    @[keypress.enter="addNewNote" :value="inputValue" />
             </div>
             <div>
-                <button class="btn" v-on:click="addNewNote">přidat poznámku</button>
+                <button class="btn" @click="addNewNote">přidat poznámku</button>
             </div>
             <hr />
             <ul class='list'>
                 <li v-if="notes.length!==0" class="list-item" v-for="(note, idx) in notes">
                     ({{idx+1}}) {{naVelkaPismena(note)}}
-                    <button v-on:click="removeNote(idx)" class="btn danger">Vymazat</button>
+                    <button @click="removeNote(idx)" class="btn danger">Vymazat</button>
                 </li>
                 <div v-else>
                     Není žádná poznámka, zapište první poznámku
