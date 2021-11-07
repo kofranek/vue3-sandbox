@@ -26,7 +26,9 @@
             <hr />
             <ul class='list' v-if="notes.length!==0">
                 <li class="list-item" v-for="(note, idx) in notes">
-                    ({{idx+1}}) {{naVelkaPismena(note)}}
+                    <span :class="note.length>5?'primary':'bold'">
+                        ({{idx+1}}) {{naVelkaPismena(note)}}
+                    </span>
                     <button @click="removeNote(idx)" class="btn danger">Vymazat</button>
                 </li>
 
