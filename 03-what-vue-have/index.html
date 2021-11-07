@@ -25,6 +25,10 @@
         @click="title='nová hlavička'"
       >změň hlavičku</button> -->
       
+
+      <div class="form-control">
+        <input type="text" @keyup.enter.shift.exact="addItem" ref="myInput">
+      </div>
       <ul class="list" v-if="items.length">
         <!-- <li class="list-item" v-for="(item, idx) in 7">
           <strong>{{idx}}. </strong>{{item}}
@@ -35,8 +39,8 @@
         </li> -->
 
         <li class="list-item" 
-        v-for="(item, idx) in evenItems"
-        @click="items.splice(idx,1)"
+        v-for="(item, idx) in items"
+        @click.right.prevent="items.splice(idx,1)"
         :key="item"
         >
         <strong> {{item}}</strong>&nbsp;
