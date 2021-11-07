@@ -34,8 +34,8 @@
           <strong>{{key}}: </strong>{{value}}
         </li> -->
 
-        <li class="lit-item" 
-        v-for="(item, idx) in items"
+        <li class="list-item" 
+        v-for="(item, idx) in evenItems"
         @click="items.splice(idx,1)"
         :key="item"
         >
