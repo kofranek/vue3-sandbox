@@ -37,10 +37,12 @@
         <li class="lit-item" 
         v-for="(item, idx) in items"
         @click="items.splice(idx,1)"
-        
+        :key="item"
         >
-          {{item}}
-        </li>
+        <strong> {{item}}</strong>&nbsp;
+        <!-- <input type="text" @click="stopPropagation">  -->
+        <input type="text" @click.stop>
+      </li>
       </ul>
       <h3 v-show="items.length===0">Nejsou žádné prvky</h3>
     </div>
