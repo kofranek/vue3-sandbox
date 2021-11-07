@@ -61,7 +61,7 @@ const App = {
     inputValue (value) {
       console.log('inputValue changed', value)
       if (value.length > 10) {
-        this.inputValue = 0
+        this.inputValue = ''
       }
     }
   }
