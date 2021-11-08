@@ -21,10 +21,16 @@ Vue.createApp({
       event.stopPropagation()
     },
     addItem(){
-      console.log(this.$refs.myInput.value)
+     // console.log(this.$refs.myInput.value)
       this.items.unshift(this.$refs.myInput.value)
       this.$refs.myInput.value=''
-    }
+    },
+    remove(index){
+      this.items.splice(index,1)
+    },
+    log(item){
+      console.log('log item: ',item)
+    },
   },
 
   computed: {
