@@ -3,23 +3,20 @@
     <div class="card">
       <h2>Aktuální novinky {{ now }}</h2>
     </div>
-
-    <div class="card" v-for="item in news" :key="item">
-      <h3>{{ item }}</h3>
-      <button class="btn" @click="isOpen = !isOpen">Otevřít</button>
-      <p v-if="isOpen">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-        numquam, est culpa labore delectus placeat ipsum consequuntur
-        accusantium.
-      </p>
-    </div>
+    <app-news></app-news>
+    <AppNews/>
   </div>
 </template>
 
 <script>
+import AppNews from './AppNews'
 export default {
   name: 'App',
-  components: {},
+  components: {
+    // 'app-news': AppNews
+    // AppNews: AppNews
+    AppNews
+  },
   data () {
     return {
       now: new Date().toLocaleDateString(),
