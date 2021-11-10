@@ -3,11 +3,12 @@
     <div class="card">
       <h2>Aktuální novinky {{ now }}</h2>
     </div>
-    <app-news
-      v-for="item in news"
-      :key='item'
-      :title = "item"
-    />
+    <app-news v-for="item in news"
+     :key="item.id"
+     :title="item.title"
+     :id="item.id"
+     :isOpen="item.isOpen"
+     />
   </div>
 </template>
 
@@ -24,7 +25,18 @@ export default {
     return {
       titul: 'titulek',
       now: new Date().toLocaleDateString(),
-      news: ['první novinka', 'druhá novinka'],
+      news: [
+        {
+          title: 'první novinka',
+          id: 11,
+          isOpen: false
+        },
+        {
+          title: 'druhá novinka',
+          id: 22,
+          isOpen: false
+        }
+      ],
       isOpen: false
     }
   }

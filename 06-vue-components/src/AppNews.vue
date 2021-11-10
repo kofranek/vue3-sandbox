@@ -11,7 +11,22 @@
 
 <script>
 export default {
-  props: ['title'],
+  // props: ['title'],
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true,
+      validator (value) {
+        return value % 11 === 0
+      }
+    // isOpen: Boolean
+    // isOpen nemůžu načítat od rodiče, protože ho měním lokálně ale rodič se o změně nedozví
+    }
+  },
   data () {
     return {
       isOpen: false
