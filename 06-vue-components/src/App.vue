@@ -2,12 +2,14 @@
   <div class="container pt-1">
     <div class="card">
       <h2>Aktuální novinky {{ now }}</h2>
-    </div>
+      <span>Celkem otevřeno: {{openRate}} krát </span>
+ </div>
     <app-news v-for="item in news"
      :key="item.id"
      :title="item.title"
      :id="item.id"
      :isOpen="item.isOpen"
+     @openNews="changeOpen"
      />
   </div>
 </template>
@@ -34,10 +36,20 @@ export default {
         {
           title: 'druhá novinka',
           id: 22,
-          isOpen: false
+          isOpen: true
         }
       ],
-      isOpen: false
+      openRate: 0
+    }
+  },
+  methods: {
+    changeOpen (ident, open) {
+      const item = this.news.find(el => el.id === ident)
+      item.isOpen = open
+      // console.log('Synchronizováno: rodič: item.isOpen=', item.isOpen, 'potomek: open=', open)
+      if (open === true) {
+        this.openRate++
+      }
     }
   }
 }

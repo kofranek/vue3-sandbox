@@ -1,8 +1,10 @@
 <template>
   <div class="card">
     <h3>{{ title }}</h3>
-    <button class="btn" @click="isOpen = !isOpen">Otevřít</button>
-    <p v-if="isOpen">
+    <button class="btn" @click="open">
+      {{isNewsOpen ? "Zavřít" : "Otevřít"}}
+    </button>
+    <p v-if="isNewsOpen">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti numquam,
       est culpa labore delectus placeat ipsum consequuntur accusantium.
     </p>
@@ -23,13 +25,21 @@ export default {
       validator (value) {
         return value % 11 === 0
       }
-    // isOpen: Boolean
-    // isOpen nemůžu načítat od rodiče, protože ho měním lokálně ale rodič se o změně nedozví
+    },
+    isOpen: {
+      type: Boolean,
+      required: true
     }
   },
   data () {
     return {
-      isOpen: false
+      isNewsOpen: this.isOpen
+    }
+  },
+  methods: {
+    open () {
+      this.isNewsOpen = !this.isNewsOpen
+      this.$emit('open-news', this.id, this.isNewsOpen)
     }
   }
 }
